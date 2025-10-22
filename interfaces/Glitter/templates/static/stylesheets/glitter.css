@@ -29,6 +29,10 @@ h2 {
     display: none;
 }
 
+.navbar-collapse {
+    padding-right: 4px;
+}
+
 .navbar-collapse.in {
     overflow: visible;
 }
@@ -693,6 +697,10 @@ tr.queueitem>td:first-child>a {
     position: relative;
 }
 
+.history h2 {
+    clear: left;
+}
+
 .history-table {
     border-bottom: 1px solid #F0F0F0 !important;
 }
@@ -744,13 +752,17 @@ tr.queueitem>td:first-child>a {
 }
 
 .history-table .delete .dropdown-menu {
-    top: auto;
+    top: -100000px;
     left: auto;
     right: 20px;
     text-align: left;
     margin-top: 4px;
     padding: 10px;
     width: 700px;
+}
+
+.history-table .delete .open .dropdown-menu {
+    top: auto;
 }
 
 .history-status-table .col-sm-2 {
@@ -881,30 +893,31 @@ tr.queueitem>td:first-child>a {
     margin-left: 2px;
 }
 
-#history-table-search {
+.search-box {
     float: left;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     margin-right: 5px;
 }
 
-#history-table-search input {
-    width: 130px;
-    transition: width 0.2s ease-out;
+.search-box input {
+    width: 130px !important;
+    transition: width 0.2s ease-out !important;
     border: 1px solid #dddddd;
-    box-shadow: none;
-    -webkit-box-shadow: none;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
 }
 
-#history-table-search input:focus {
-    width: 250px;
-    border-color: #ccc;
+.search-box input:focus,
+.search-box input:valid {
+    width: 250px !important;
+    border-color: #ccc !important;
 }
 
-#history-table-search input::-ms-clear {
+.search-box input::-ms-clear {
     display: none;
 }
 
-#history-table-search a {
+.search-box a {
     float: right;
     position: absolute;
     display: block;
@@ -915,12 +928,12 @@ tr.queueitem>td:first-child>a {
     z-index: 999;
 }
 
-#history-table-search a span {
+.search-box a span {
     cursor: pointer;
 }
 
 .history-options-show-failed,
-#history-table-search input:focus+span {
+.search-box input:focus+span {
     opacity: 1;
 }
 
@@ -1043,6 +1056,8 @@ tr.queueitem>td:first-child>a {
     width: auto;
     display: inline-block;
     margin-top: 10px;
+    margin-right: 5px;
+    float: left;
 }
 
 #modal_options .options-server-box {
@@ -1351,6 +1366,16 @@ tr.queueitem>td:first-child>a {
 @media screen and (max-width: 1200px) {
     .queue-table td.name:hover .row-wrap-text {
         max-width: 77%;
+    }
+    
+    td.name .name-ratings {
+        margin-left: 0px;
+        margin-right: -5px;
+        display: block;
+    }
+    
+    td.name .row-wrap-text {
+        margin-right: 4px;
     }
 }
 
